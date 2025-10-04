@@ -14,3 +14,13 @@ DissaMM is a lightweight, explainable, multi-modal neural architecture for class
 - 🔗 **Multi-modal (text + image)** – processes both visual and textual information for richer context, unlike DisasterNet which relies only on images. Since social media posts are often noisy, we add a textual encoder to provide additional context.  
 - 🔍 **Explainability** – integrates LIME and SHAP to generate transparent, human-interpretable decision-making visuals.  
 - 🌍 **Low-resource optimization** – tailored for deployment in emerging regions with limited computational resources.  
+
+
+## Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/yourusername/DissaMM.git
+cd DissaMM
+pip install -r requirements.txt
