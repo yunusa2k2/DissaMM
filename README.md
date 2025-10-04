@@ -90,3 +90,26 @@ We compared **DisasterNet (baseline)**, **Dissa (unimodal)**, and **DissaMM (mul
 * **Dissa** cuts trainable parameters to 2.07M, halves latency, and doubles throughput under FP16.
 * **DissaMM** achieves high efficiency: 1.51M trainable parameters, 3.02 GFLOPs, sub-millisecond latency, and >35k images/sec throughput (FP16) with moderate memory (~680 MB).
 * This demonstrates that frozen multi-modal embeddings with a lightweight trainable head enable fast, low-memory inference suitable for edge deployment.
+
+## Explainability with LIME
+
+We use **LIME (Local Interpretable Model-agnostic Explanations)** to visualize which parts of the input most influence DissaMM’s predictions:
+
+We use LIME to interpret DissaMM’s predictions by first segmenting an input image into superpixels and creating perturbed versions by masking these regions. The model’s predictions on the perturbed samples are then used to fit a simple local surrogate model that approximates the behavior of the complex network. From this, the top five most influential superpixels and textual tokens contributing to the prediction are identified. Results show that DisasterNet highlights scattered, often irrelevant regions and missed classification, while DissaMM (multi-modal) effectively emphasizes disaster-relevant image areas and textual tokens, improving both confidence and alignment with human judgment. Figures 2 shows DisasterNet and DissaMM 
+
+* **DisasterNet (image-only)** – Figure 2a shows large, scattered superpixels, many unrelated to disaster cues, indicating sensitivity to background noise.
+* **DissaMM (multi-modal)** – Figure 2b produces focused explanations, highlighting disaster-relevant image regions (e.g., flooded areas, damaged structures) and textual tokens, improving confidence and aligning model reasoning with human judgment.
+
+These analyses demonstrate that **multimodal fusion enhances interpretability**, reduces reliance on noisy inputs, and provides more robust, human-aligned decision support.
+
+---
+
+You can also include a figure reference with:
+
+```markdown
+<p align="center">
+  <img src="images/lime_explanations1.png" alt="LIME Explanations" width="80%">
+  <br>
+  <em>Figure 2: LIME explanations for DisasterNet and DissaMM</em>
+</p>
+```
