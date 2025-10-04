@@ -25,6 +25,10 @@ git clone https://github.com/yunusa2k2/DissaMM.git
 cd DissaMM
 pip install -r requirements.txt
 ```
+### Pre-trained Weights & Inference Results
+
+* The BERT encoder used is [`bert-base-uncased`](https://huggingface.co/bert-base-uncased), whose weights are frozen in DissaMM.
+* Complete inference results for **DisasterNet**, **Dissa**, and **DissaMM** across all five classes (**time period, urgency, relevance, damage, relief**) are available for download [here](YOUR_LINK_HERE).
 
 ## Dataset
 
