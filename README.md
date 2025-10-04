@@ -114,3 +114,22 @@ These analyses demonstrate that **multimodal fusion enhances interpretability**,
   <br>
   <em>Figure 2b: LIME explanations for DissaMM</em>
 </p>
+
+## 4.2.1. SHAP-Generated Explanations
+
+We applied SHAP to interpret **DisasterNet**, and **DissaMM** on **urgency** and **relevance** tasks. SHAP highlights which image regions or text tokens drive predictions.
+
+* **DisasterNet**: Weak or misplaced attributions, often dominated by noise (Figure 3a).
+* **DissaMM**: Produces coherent, disaster-relevant attributions across image and text, yielding confident and human-aligned decisions (Figure 3b).
+**Conclusion**: SHAP confirms that multimodal fusion improves interpretability, robustness, and alignment with human reasoning compared to unimodal models.
+  
+<p align="center">
+  <img src="images/shap_a.png" alt="SHAP Explanations" width="90%">
+  <br>
+  <em>Figure 3a: SHAP explanations for DisasterNet</em>
+  <br><br>
+  
+  <img src="images/shap_b.png" alt="SHAP Explanations" width="90%">
+  <br>
+  <em>Figure 3b: SHAP explanations for DissaMM</em>
+</p>
