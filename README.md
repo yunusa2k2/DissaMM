@@ -21,6 +21,6 @@ DissaMM is a lightweight, explainable, multi-modal neural architecture for class
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/yourusername/DissaMM.git
+git clone https://github.com/yunusa2k2/DissaMM.git
 cd DissaMM
 pip install -r requirements.txt
