@@ -121,7 +121,7 @@ We applied SHAP to interpret **DisasterNet**, and **DissaMM** on **urgency** and
 
 * **DisasterNet**: Weak or misplaced attributions, often dominated by noise (Figure 3a).
 * **DissaMM**: Produces coherent, disaster-relevant attributions across image and text, yielding confident and human-aligned decisions (Figure 3b).
-**Conclusion**: SHAP confirms that multimodal fusion improves interpretability, robustness, and alignment with human reasoning compared to unimodal models.
+SHAP confirms that multimodal fusion improves interpretability, robustness, and alignment with human reasoning compared to unimodal models.
   
 <p align="center">
   <img src="images/shap_a.png" alt="SHAP Explanations" width="90%">
