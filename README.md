@@ -10,7 +10,7 @@ DissaMM is a lightweight, explainable, multi-modal neural architecture for class
 
 ## Features
 
-- ⚡ **Lightweight & real-time inference** – optimized for speed in resource-constrained environments using transfer learning (TL).  
+- ⚡ **Lightweight & real-time inference** – optimized for speed in resource-constrained environments using TL.  
 - 🔗 **Multi-modal (text + image)** – processes both visual and textual information for richer context, unlike DisasterNet which relies only on images. Since social media posts are often noisy, we add a textual encoder to provide additional context.  
 - 🔍 **Explainability** – integrates LIME and SHAP to generate transparent, human-interpretable decision-making visuals.  
 - 🌍 **Low-resource optimization** – tailored for deployment in emerging regions with limited computational resources.  
