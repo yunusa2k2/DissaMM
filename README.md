@@ -102,14 +102,13 @@ We use LIME to interpret DissaMM’s predictions by first segmenting an input im
 
 These analyses demonstrate that **multimodal fusion enhances interpretability**, reduces reliance on noisy inputs, and provides more robust, human-aligned decision support.
 
----
-
-You can also include a figure reference with:
-
-```markdown
 <p align="center">
-  <img src="images/lime_explanations1.png" alt="LIME Explanations" width="80%">
+  <img src="images/dissaster.png" alt="LIME Explanations" width="80%">
   <br>
-  <em>Figure 2: LIME explanations for DisasterNet and DissaMM</em>
+  <em>Figure 2a: LIME explanations for DisasterNet</em>
+  <br><br>
+  
+  <img src="images/dissamm.png" alt="LIME Explanations" width="80%">
+  <br>
+  <em>Figure 2b: LIME explanations for DissaMM</em>
 </p>
-```
