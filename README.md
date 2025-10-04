@@ -38,7 +38,9 @@ For training and evaluation, we used the **DisasterNet dataset** introduced by J
 - **Annotations**: A human-coded subset of 1,128 images was labeled by categories:  
   - **Time period**: pre-storm, landfall, aftermath/cleanup  
   - **Urgency**: 0 (spam/unrelated) → 4 (highly urgent)  
-  - **Motifs**: ad, animals, damage, drink, food, gear, macro, outside, people, relief, other  
+  - **Relevance**: whether the image is relevant to the disaster  
+  - **Motifs**: presence of `damage` and `relief` motifs  
+
 
 > ⚠️ **Note**: This dataset is **not included** in this repository. Please refer to the original publication for details on access:  
 > Johnson, M., Murthy, D., Robertson, B., Smith, R., & Stephens, K. (2020).  
