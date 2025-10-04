@@ -70,3 +70,23 @@ We evaluated **DissaMM** against the **DisasterNet baseline** across five disast
 * Gains in Urgency are modest but positive.
 * Relevance shows higher accuracy but slightly lower macro F1 (0.752 → 0.629), indicating stronger majority-class performance but weaker balance across all categories.
 * Overall, **DissaMM demonstrates robust and balanced generalization**.
+
+## Computational Complexity & Runtime
+
+We compared **DisasterNet (baseline)**, **Dissa (unimodal)**, and **DissaMM (multi-modal)** on efficiency metrics including parameters, FLOPs, latency, throughput, and memory usage (FP32/FP16):
+
+| Model       | Precision | Trainable Params (M) | FLOPs (G) | Latency (ms) | Throughput (img/sec) | Memory (MB) |
+| ----------- | --------- | -------------------- | --------- | ------------ | -------------------- | ----------- |
+| DisasterNet | FP32      | 39.82                | 15.42     | 40.13        | 199.37               | 1142.75     |
+| DisasterNet | FP16      | 39.82                | 15.42     | 18.40        | 434.77               | 990.17      |
+| Dissa       | FP32      | 2.07                 | 4.13      | 20.57        | 388.86               | 404.46      |
+| Dissa       | FP16      | 2.07                 | 4.13      | 10.14        | 788.99               | 324.93      |
+| DissaMM     | FP32      | 1.51                 | 3.02      | 0.56         | 14,208.95            | 680.51      |
+| DissaMM     | FP16      | 1.51                 | 3.02      | 0.22         | 35,797.50            | 656.94      |
+
+**Analysis**:
+
+* Transfer learning with frozen backbones (ResNet50 + BERT), training **only the final MLP layer**, drastically reduces trainable parameters and FLOPs.
+* **Dissa** cuts trainable parameters to 2.07M, halves latency, and doubles throughput under FP16.
+* **DissaMM** achieves high efficiency: 1.51M trainable parameters, 3.02 GFLOPs, sub-millisecond latency, and >35k images/sec throughput (FP16) with moderate memory (~680 MB).
+* This demonstrates that frozen multi-modal embeddings with a lightweight trainable head enable fast, low-memory inference suitable for edge deployment.
