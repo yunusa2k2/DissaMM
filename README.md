@@ -115,7 +115,7 @@ These analyses demonstrate that **multimodal fusion enhances interpretability**,
   <em>Figure 2b: LIME explanations for DissaMM</em>
 </p>
 
-## 4.2.1. SHAP-Generated Explanations
+## Explainability with SHAP
 
 We applied SHAP to interpret **DisasterNet**, and **DissaMM** on **urgency** and **relevance** tasks. SHAP highlights which image regions or text tokens drive predictions.
 
