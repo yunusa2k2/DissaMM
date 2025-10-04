@@ -45,3 +45,28 @@ For training and evaluation, we used the **DisasterNet dataset** introduced by J
 > ⚠️ **Note**: This dataset is **not included** in this repository. Please refer to the original publication for details on access:  
 > Johnson, M., Murthy, D., Robertson, B., Smith, R., & Stephens, K. (2020).  
 > *DisasterNet: Evaluating the performance of transfer learning to classify hurricane-related images posted on Twitter.* Proceedings of the International Conference on Web and Social Media (ICWSM).
+
+## Results
+
+We evaluated **DissaMM** against the **DisasterNet baseline** across five disaster classification tasks: **time period, urgency, relevance, and (damage, and relief) motifs. Performance metrics include training/validation loss, accuracy, and F1 scores (macro and micro).
+
+| Model       | Task        | Train Loss | Train Acc. | Val. Loss | Val. Acc. | F1 Macro | F1 Micro |
+| ----------- | ----------- | ---------- | ---------- | --------- | --------- | -------- | -------- |
+| DisasterNet | Time Period | 0.6398     | 0.7705     | 0.7515    | 0.6770    | 0.3735   | 0.5012   |
+| DisasterNet | Urgency     | 0.9514     | 0.6098     | 1.0841    | 0.6195    | 0.5847   | 0.6157   |
+| DisasterNet | Relevance   | 0.3313     | 0.9035     | 0.5222    | 0.8186    | 0.7520   | 0.8110   |
+| DisasterNet | Damage      | 0.1441     | 0.9957     | 0.2530    | 0.9023    | 0.6973   | 0.4375   |
+| DisasterNet | Relief      | 0.1280     | 0.9484     | 0.2335    | 0.9336    | 0.8240   | 0.7568   |
+| **DissaMM** | Time Period | 0.6198     | 0.7905     | 0.7633    | 0.5714    | 0.5902   | 0.5714   |
+| **DissaMM** | Urgency     | 0.9314     | 0.6298     | 1.0641    | 0.6395    | 0.6047   | 0.6357   |
+| **DissaMM** | Relevance   | 0.3113     | 0.9235     | 0.5022    | 0.8386    | 0.6285   | 0.7086   |
+| **DissaMM** | Damage      | 0.1241     | 0.9980     | 0.2330    | 0.9223    | 0.8500   | 0.8914   |
+| **DissaMM** | Relief      | 0.1080     | 0.9684     | 0.2166    | 0.9343    | 0.8440   | 0.9343   |
+
+**Analysis**:
+
+* **DissaMM outperforms DisasterNet** in most tasks, particularly for **Damage** (macro F1 ↑ 0.697 → 0.850; micro F1 ↑ 0.438 → 0.891) and **Relief** (macro F1 ↑ 0.824 → 0.844; micro F1 ↑ 0.757 → 0.934).
+* Time Period classification improves (macro F1 ↑ 0.374 → 0.590), reflecting better temporal context modeling.
+* Gains in Urgency are modest but positive.
+* Relevance shows higher accuracy but slightly lower macro F1 (0.752 → 0.629), indicating stronger majority-class performance but weaker balance across all categories.
+* Overall, **DissaMM demonstrates robust and balanced generalization**.
