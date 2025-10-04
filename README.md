@@ -93,9 +93,7 @@ We compared **DisasterNet (baseline)**, **Dissa (unimodal)**, and **DissaMM (mul
 
 ## Explainability with LIME
 
-We use **LIME (Local Interpretable Model-agnostic Explanations)** to visualize which parts of the input most influence DissaMM’s predictions:
-
-We use LIME to interpret DissaMM’s predictions by first segmenting an input image into superpixels and creating perturbed versions by masking these regions. The model’s predictions on the perturbed samples are then used to fit a simple local surrogate model that approximates the behavior of the complex network. From this, the top five most influential superpixels and textual tokens contributing to the prediction are identified. Results show that DisasterNet highlights scattered, often irrelevant regions and missed classification, while DissaMM (multi-modal) effectively emphasizes disaster-relevant image areas and textual tokens, improving both confidence and alignment with human judgment. Figures 2 shows DisasterNet and DissaMM 
+We use LIME (Local Interpretable Model-agnostic Explanations) to interpret DissaMM’s predictions by first segmenting an input image into superpixels and creating perturbed versions by masking these regions. The model’s predictions on the perturbed samples are then used to fit a simple local surrogate model that approximates the behavior of the complex network. From this, the top five most influential superpixels and textual tokens contributing to the prediction are identified. Results show that DisasterNet highlights scattered, often irrelevant regions and missed classification, while DissaMM (multi-modal) effectively emphasizes disaster-relevant image areas and textual tokens, improving both confidence and alignment with human judgment. Figures 2a and 2b show DisasterNet and DissaMM.
 
 * **DisasterNet (image-only)** – Figure 2a shows large, scattered superpixels, many unrelated to disaster cues, indicating sensitivity to background noise.
 * **DissaMM (multi-modal)** – Figure 2b produces focused explanations, highlighting disaster-relevant image regions (e.g., flooded areas, damaged structures) and textual tokens, improving confidence and aligning model reasoning with human judgment.
@@ -103,12 +101,12 @@ We use LIME to interpret DissaMM’s predictions by first segmenting an input im
 These analyses demonstrate that **multimodal fusion enhances interpretability**, reduces reliance on noisy inputs, and provides more robust, human-aligned decision support.
 
 <p align="center">
-  <img src="images/dissaster.png" alt="LIME Explanations" width="80%">
+  <img src="images/dissaster.png" alt="LIME Explanations" width="90%">
   <br>
   <em>Figure 2a: LIME explanations for DisasterNet</em>
   <br><br>
   
-  <img src="images/dissamm.png" alt="LIME Explanations" width="80%">
+  <img src="images/dissamm.png" alt="LIME Explanations" width="90%">
   <br>
   <em>Figure 2b: LIME explanations for DissaMM</em>
 </p>
